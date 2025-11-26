@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <title>LR5 — Функціональне застосування JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <h1>Лабораторна робота №5</h1>
+    <nav>
+      <a href="index.html">На індекс</a>
+      <a href="lr4.html">LR4</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>1. Тема та мета</h2>
+      <p><strong>Тема:</strong> Функціональне застосування JavaScript у HTML-документі.</p>
+      <p><strong>Мета:</strong> ознайомитись з підключенням JavaScript до сторінки, обробкою подій та роботою зі змінними й масивами.</p>
+
+      <h2>2. Підключення JavaScript</h2>
+      <pre><code>&lt;!-- варіант 1: внутрішній скрипт --&gt;
+&lt;script&gt;
+  console.log("Hello from JS");
+&lt;/script&gt;
+
+&lt;!-- варіант 2: зовнішній файл --&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+</code></pre>
+
+      <h2>3. Приклад взаємодії з користувачем</h2>
+      <pre><code>&lt;button id="btn-hello"&gt;Привітати користувача&lt;/button&gt;
+&lt;p id="hello-output"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+  const btn = document.getElementById("btn-hello");
+  const out = document.getElementById("hello-output");
+
+  btn.addEventListener("click", function () {
+    const name = prompt("Введіть ваше імʼя:");
+    if (name) {
+      out.textContent = "Привіт, " + name + "!";
+    }
+  });
+&lt;/script&gt;
+</code></pre>
+
+      <h2>4. Приклад роботи з масивом цін</h2>
+      <pre><code>&lt;button id="btn-total"&gt;Порахувати суму замовлення&lt;/button&gt;
+&lt;p id="total-output"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+  const prices = [20000, 15000, 5000]; // приклад цін товарів у кошику
+  const btnTotal = document.getElementById("btn-total");
+  const outTotal = document.getElementById("total-output");
+
+  btnTotal.addEventListener("click", function () {
+    let sum = 0;
+    for (let i = 0; i &lt; prices.length; i++) {
+      sum += prices[i];
+    }
+    outTotal.textContent = "Сума замовлення: " + sum + " грн";
+  });
+&lt;/script&gt;
+</code></pre>
+
+      <h2>5. Перевірка введених даних форми</h2>
+      <pre><code>&lt;form id="order-form"&gt;
+  &lt;label&gt;Телефон:
+    &lt;input type="text" id="phone"&gt;
+  &lt;/label&gt;
+  &lt;button type="submit"&gt;Відправити&lt;/button&gt;
+&lt;/form&gt;
+&lt;p id="form-message"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+  const form = document.getElementById("order-form");
+  const phone = document.getElementById("phone");
+  const msg = document.getElementById("form-message");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (phone.value.trim().length &lt; 10) {
+      msg.textContent = "Помилка: введіть коректний номер телефону.";
+      msg.style.color = "tomato";
+    } else {
+      msg.textContent = "Дякуємо! Замовлення відправлено.";
+      msg.style.color = "lightgreen";
+    }
+  });
+&lt;/script&gt;
+</code></pre>
+
+      <h2>6. Висновки</h2>
+      <p>У ЛР5 було підключено JavaScript до HTML-документа, реалізовано обробку подій кліку та відправлення форми, а також виконано прості обчислення з масивом даних (цінами товарів у кошику).</p>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2025. Рибальченко Олександр, ІПЗ23-301.
+  </footer>
+</div>
+</body>
+</html>

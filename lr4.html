@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <title>LR4 — Адаптивна верстка та медіа-запити</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <h1>Лабораторна робота №4</h1>
+    <nav>
+      <a href="index.html">На індекс</a>
+      <a href="lr3.html">LR3</a>
+      <a href="lr5.html">LR5</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>1. Тема та мета</h2>
+      <p><strong>Тема:</strong> Адаптивна верстка. Медіа-запити. Мета-тег <code>viewport</code>.</p>
+      <p><strong>Мета:</strong> навчитися робити макет сторінки, що коректно відображається на різних пристроях (ПК, планшет, смартфон), з використанням медіа-запитів.</p>
+
+      <h2>2. Мета-тег viewport</h2>
+      <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
+      <p>Цей тег повідомляє браузеру, що ширина віртуального вікна повинна дорівнювати ширині пристрою. Без нього сторінка на мобільних може виглядати дуже дрібною.</p>
+
+      <h2>3. Приклад медіа-запиту</h2>
+      <pre><code>/* стилі за замовчуванням (для десктопів) */
+.content-wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+/* адаптація для екранів менше 768px */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .product-card {
+    flex: 1 1 100%;
+  }
+}
+</code></pre>
+
+      <h2>4. Типові точки перелому (breakpoints)</h2>
+      <ul>
+        <li><code>max-width: 1024px</code> — планшети в горизонтальному положенні.</li>
+        <li><code>max-width: 768px</code> — планшети / великі телефони.</li>
+        <li><code>max-width: 480px</code> — смартфони.</li>
+      </ul>
+
+      <h2>5. Приклад адаптивного меню</h2>
+      <pre><code>.nav-flex {
+  display: flex;
+  gap: 12px;
+}
+
+/* для мобільних — меню в колонку */
+@media (max-width: 600px) {
+  .nav-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</code></pre>
+
+      <div class="screenshot">
+        [Скріншоти: вигляд сторінки на десктопі, планшеті, смартфоні]
+      </div>
+
+      <h2>6. Висновки</h2>
+      <p>У ЛР4 було налаштовано мета-тег <code>viewport</code>, додано кілька медіа-запитів для зміни розташування блоків на малих екранах та перевірено відображення макета інтернет-магазину на різних пристроях.</p>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2025. Рибальченко Олександр, ІПЗ23-301.
+  </footer>
+</div>
+</body>
+</html>

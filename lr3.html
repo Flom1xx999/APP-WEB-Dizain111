@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <title>LR3 — Верстка. Flexbox</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <h1>Лабораторна робота №3</h1>
+    <nav>
+      <a href="index.html">На індекс</a>
+      <a href="lr2.html">LR2</a>
+      <a href="lr4.html">LR4</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>1. Тема та мета</h2>
+      <p><strong>Тема:</strong> Верстка HTML-документа. Верстка засобами CSS та Flexbox.</p>
+      <p><strong>Мета:</strong> освоїти модуль Flexbox та застосувати його для побудови макета сторінки інтернет-магазину.</p>
+
+      <h2>2. Основні поняття Flexbox</h2>
+      <ul>
+        <li><strong>flex-container</strong> — елемент з <code>display: flex;</code></li>
+        <li><strong>flex-items</strong> — дочірні елементи контейнера.</li>
+        <li><strong>flex-direction</strong> — напрямок розташування елементів (row, column).</li>
+        <li><strong>justify-content</strong> — вирівнювання по головній осі.</li>
+        <li><strong>align-items</strong> — вирівнювання по поперечній осі.</li>
+        <li><strong>flex-wrap</strong> — перенесення елементів на новий рядок.</li>
+      </ul>
+
+      <h2>3. Простий приклад Flexbox</h2>
+      <pre><code>&lt;div class="flex-row"&gt;
+  &lt;div class="box"&gt;1&lt;/div&gt;
+  &lt;div class="box"&gt;2&lt;/div&gt;
+  &lt;div class="box"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+      <pre><code>.flex-row {
+  display: flex;
+  gap: 10px;
+}
+
+.box {
+  flex: 1;
+  background: #e9f2ff;
+  border: 1px solid #005bbb;
+  padding: 10px;
+  text-align: center;
+}
+</code></pre>
+
+      <div class="screenshot">
+        [Скріншот: три блоки, вирівняні в один ряд за допомогою Flexbox]
+      </div>
+
+      <h2>4. Шапка сайту на Flexbox</h2>
+      <pre><code>&lt;header class="header-flex"&gt;
+  &lt;div class="logo"&gt;Computer Store&lt;/div&gt;
+  &lt;nav class="nav-flex"&gt;
+    &lt;a href="#"&gt;Головна&lt;/a&gt;
+    &lt;a href="#"&gt;Каталог&lt;/a&gt;
+    &lt;a href="#"&gt;Контакти&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+</code></pre>
+
+      <pre><code>.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #005bbb;
+  color: #fff;
+  padding: 10px 16px;
+}
+
+.nav-flex a {
+  margin-left: 12px;
+  color: #fff;
+  text-decoration: none;
+}
+</code></pre>
+
+      <h2>5. Макет сторінки (контент + сайдбар)</h2>
+      <pre><code>&lt;div class="content-wrapper"&gt;
+  &lt;main class="main-content"&gt;
+    &lt;h2&gt;Каталог товарів&lt;/h2&gt;
+    &lt;div class="products-grid"&gt;
+      &lt;article class="product-card"&gt;Товар 1&lt;/article&gt;
+      &lt;article class="product-card"&gt;Товар 2&lt;/article&gt;
+      &lt;article class="product-card"&gt;Товар 3&lt;/article&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+
+  &lt;aside class="sidebar"&gt;
+    &lt;h3&gt;Фільтри&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;По ціні&lt;/li&gt;
+      &lt;li&gt;По бренду&lt;/li&gt;
+      &lt;li&gt;По типу товару&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/aside&gt;
+&lt;/div&gt;
+</code></pre>
+
+      <pre><code>.content-wrapper {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.main-content { flex: 3; }
+
+.sidebar {
+  flex: 1;
+  background: #f0f0f0;
+  padding: 10px;
+}
+
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.product-card {
+  flex: 1 1 calc(33.333% - 12px);
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+</code></pre>
+
+      <div class="screenshot">
+        [Скріншот: сторінка з контентом і сайдбаром на Flexbox]
+      </div>
+
+      <h2>6. Висновки</h2>
+      <p>У ЛР3 було використано Flexbox для побудови макета сторінки: шапки, блоку контенту, сітки товарів та бічної панелі. Flexbox спрощує адаптивну верстку та дозволяє гнучко розташовувати елементи.</p>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2025. Рибальченко Олександр, ІПЗ23-301.
+  </footer>
+</div>
+</body>
+</html>

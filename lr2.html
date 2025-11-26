@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <title>LR2 — CSS. Класифікація селекторів</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <h1>Лабораторна робота №2</h1>
+    <nav>
+      <a href="index.html">На індекс</a>
+      <a href="lr1.html">LR1</a>
+      <a href="lr3.html">LR3</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>1. Тема та мета</h2>
+      <p><strong>Тема:</strong> CSS. Класифікація селекторів. Стильове оформлення елементів HTML-документа.</p>
+      <p><strong>Мета:</strong> вивчити основні типи селекторів CSS та навчитися використовувати їх для оформлення тексту, посилань, списків, таблиць і блоків.</p>
+
+      <h2>2. Способи підключення стилів</h2>
+      <ul>
+        <li><strong>Inline-стилі:</strong> атрибут <code>style</code> в середині тега.</li>
+        <li><strong>Внутрішні стилі:</strong> тег <code>&lt;style&gt;</code> у блоці <code>&lt;head&gt;</code>.</li>
+        <li><strong>Зовнішній файл:</strong> <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</li>
+      </ul>
+
+      <h2>3. Класифікація селекторів</h2>
+      <ol>
+        <li>Селектори за тегом: <code>p { color: #333; }</code></li>
+        <li>Селектори за класом: <code>.btn { padding: 8px 16px; }</code></li>
+        <li>Селектори за id: <code>#header { background: #005bbb; }</code></li>
+        <li>Групові селектори: <code>h1, h2, h3 { font-family: Arial; }</code></li>
+        <li>Комбіновані селектори: <code>nav a { ... }</code>, <code>.card &gt; h3 { ... }</code></li>
+        <li>Псевдокласи: <code>a:hover</code>, <code>input:focus</code>, <code>li:first-child</code>.</li>
+        <li>Псевдоелементи: <code>::before</code>, <code>::after</code>, <code>::first-line</code>.</li>
+      </ol>
+
+      <h2>4. Приклади стилізації шапки та hero-блока</h2>
+      <pre><code>&lt;header id="main-header"&gt;
+  &lt;h1 class="site-title"&gt;Computer Store&lt;/h1&gt;
+  &lt;nav class="main-nav"&gt;
+    &lt;a href="#" class="nav-link"&gt;Головна&lt;/a&gt;
+    &lt;a href="#" class="nav-link"&gt;Каталог&lt;/a&gt;
+    &lt;a href="#" class="nav-link btn-primary"&gt;Кошик&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;section class="hero"&gt;
+  &lt;h2&gt;Купуй найкращу комп'ютерну техніку&lt;/h2&gt;
+  &lt;p&gt;Ноутбуки, відеокарти, комплектуючі за вигідними цінами.&lt;/p&gt;
+  &lt;a href="#" class="btn-primary"&gt;Перейти в каталог&lt;/a&gt;
+&lt;/section&gt;
+</code></pre>
+
+      <pre><code>#main-header {
+  background: #005bbb;
+  color: #fff;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title { margin: 0; }
+
+.main-nav .nav-link {
+  margin-left: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-nav .nav-link:hover {
+  text-decoration: underline;
+}
+
+.btn-primary {
+  background: #ffcc00;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.hero {
+  margin-top: 20px;
+  padding: 20px;
+  background: #e9f2ff;
+  border-radius: 6px;
+}
+</code></pre>
+
+      <div class="screenshot">
+        [Скріншот: шапка сайту та hero-блок з оформленням CSS]
+      </div>
+
+      <h2>5. Стилізація таблиці та списків</h2>
+      <pre><code>table.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.product-table th,
+.product-table td {
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+}
+.product-table thead {
+  background: #f0f0f0;
+}
+
+.feature-list {
+  list-style: square inside;
+}
+</code></pre>
+
+      <pre><code>&lt;table class="product-table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Товар&lt;/th&gt;
+      &lt;th&gt;Ціна&lt;/th&gt;
+      &lt;th&gt;Наявність&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Відеокарта RTX 4060&lt;/td&gt;
+      &lt;td&gt;20000 грн&lt;/td&gt;
+      &lt;td&gt;Є в наявності&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul class="feature-list"&gt;
+  &lt;li&gt;Гарантія 24 місяці&lt;/li&gt;
+  &lt;li&gt;Швидка доставка&lt;/li&gt;
+  &lt;li&gt;Підтримка 24/7&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+      <h2>6. Висновки</h2>
+      <p>У ЛР2 було вивчено основні типи селекторів CSS та виконано стилізацію елементів сторінки (шапка, таблиця, списки, кнопки) із використанням зовнішнього файлу стилів.</p>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2025. Рибальченко Олександр, ІПЗ23-301.
+  </footer>
+</div>
+</body>
+</html>

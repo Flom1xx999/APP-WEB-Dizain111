@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <title>LR1 — HTML-документ, GitHub, бізнес-логіка</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <h1>Лабораторна робота №1</h1>
+    <nav>
+      <a href="index.html">На індекс</a>
+      <a href="lr0.html">LR0</a>
+      <a href="lr2.html">LR2</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>1. Тема та мета роботи</h2>
+      <p><strong>Тема:</strong> HTML-ДОКУМЕНТ. Семантична розмітка. GitHub. Робота з репозиторіями. Опис бізнес-логіки власного WEB-застосунку.</p>
+      <p><strong>Мета:</strong> придбати практичні навички роботи з GitHub, HTML-документом, таблицями, зображеннями, посиланнями, списками та формами.</p>
+
+      <h2>2. Місце розташування проєктів</h2>
+      <table class="links-table">
+        <tbody>
+          <tr>
+            <th>Репозиторій власного WEB-застосунку</th>
+            <td><a href="https://github.com/Flom1xx999/computer-store" target="_blank">github.com/Flom1xx999/computer-store</a></td>
+          </tr>
+          <tr>
+            <th>Жива сторінка власного WEB-застосунку</th>
+            <td><a href="https://flom1xx999.github.io/computer-store/" target="_blank">flom1xx999.github.io/computer-store/</a></td>
+          </tr>
+          <tr>
+            <th>Репозиторій звітного HTML-документа</th>
+            <td><em>посилання на даний репозиторій</em></td>
+          </tr>
+          <tr>
+            <th>Жива сторінка звітного HTML-документа</th>
+            <td><em>посилання на GitHub Pages цього репозиторію</em></td>
+          </tr>
+          <tr>
+            <th>Репозиторій самостійних робіт</th>
+            <td><em>посилання на репозиторій self-work</em></td>
+          </tr>
+          <tr>
+            <th>Жива сторінка самостійних робіт</th>
+            <td><em>посилання на GitHub Pages self-work</em></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. Структура головної сторінки WEB-застосунку</h2>
+      <table>
+        <thead>
+          <tr><th>Блок</th><th>Призначення</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Header</td><td>Логотип, меню, посилання на кошик</td></tr>
+          <tr><td>Hero-блок</td><td>Головний банер з промо-акціями</td></tr>
+          <tr><td>Популярні категорії</td><td>Швидкий перехід до основних категорій товарів</td></tr>
+          <tr><td>Переваги магазину</td><td>Список плюсів сервісу</td></tr>
+          <tr><td>Footer</td><td>Контактні дані, копірайт, додаткові посилання</td></tr>
+        </tbody>
+      </table>
+      <div class="screenshot">
+        [Скріншот головної сторінки WEB-застосунку «Computer Store»]
+      </div>
+
+      <h2>4. HTML-код таблиці (фрагмент) + теорія</h2>
+      <pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Блок&lt;/th&gt;
+      &lt;th&gt;Призначення&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Header&lt;/td&gt;
+      &lt;td&gt;Логотип, меню, кошик&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+      <p>Для створення таблиць застосовуються теги <code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>. Оформлення (границі, фон, відступи) рекомендується виконувати через CSS.</p>
+
+      <h2>5. HTML-код зображення + теорія</h2>
+      <pre><code>&lt;img
+  src="images/hero-computer-store.jpg"
+  alt="Головний банер інтернет-магазину комп'ютерної техніки"
+  width="100%"&gt;
+</code></pre>
+      <p>Тег <code>&lt;img&gt;</code> виводить зображення. Атрибути: <code>src</code> — шлях до файлу; <code>alt</code> — альтернативний текст; <code>width</code>/<code>height</code> — розміри.</p>
+
+      <h2>6. HTML-код списків + теорія</h2>
+      <pre><code>&lt;ol&gt;
+  &lt;li&gt;Відкрити головну сторінку магазину&lt;/li&gt;
+  &lt;li&gt;Перейти в каталог&lt;/li&gt;
+  &lt;li&gt;Додати товари в кошик&lt;/li&gt;
+  &lt;li&gt;Оформити замовлення&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Швидка доставка&lt;/li&gt;
+  &lt;li&gt;Гарантія&lt;/li&gt;
+  &lt;li&gt;Підтримка 24/7&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+      <p>Нумеровані списки створюються тегом <code>&lt;ol&gt;</code>, марковані — тегом <code>&lt;ul&gt;</code>. Елементи списку позначаються <code>&lt;li&gt;</code>.</p>
+
+      <h2>7. Приклад форми</h2>
+      <pre><code>&lt;form action="#" method="post"&gt;
+  &lt;label&gt;Ім'я:
+    &lt;input type="text" name="name"&gt;
+  &lt;/label&gt;&lt;br&gt;
+  &lt;label&gt;Email:
+    &lt;input type="email" name="email"&gt;
+  &lt;/label&gt;&lt;br&gt;
+  &lt;label&gt;Повідомлення:&lt;br&gt;
+    &lt;textarea name="message" rows="4" cols="40"&gt;&lt;/textarea&gt;
+  &lt;/label&gt;&lt;br&gt;
+  &lt;button type="submit"&gt;Надіслати&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+
+      <h2>8. Висновки</h2>
+      <p>У результаті виконання ЛР1 було створено HTML-документи проєкту, налаштовано репозиторії на GitHub, підключено GitHub Pages та реалізовано приклади таблиць, зображень, списків і форм.</p>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2025. Рибальченко Олександр, ІПЗ23-301.
+  </footer>
+</div>
+</body>
+</html>
